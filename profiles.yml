@@ -1,0 +1,10 @@
+# Local DuckDB profile — zero infrastructure, runs anywhere.
+# The SQL is written to stay portable to Snowflake (see README).
+# Run dbt with:  dbt build --profiles-dir .
+gtm_attribution:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: gtm_attribution.duckdb
+      threads: 4

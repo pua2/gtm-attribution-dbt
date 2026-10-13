@@ -1,0 +1,26 @@
+name: dbt CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    name: build and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dbt-duckdb
+        run: pip install "dbt-duckdb==1.9.*"
+
+      # dbt build runs seeds, models, and tests together in dependency order.
+      # A single failing test (including the two attribution data contracts)
+      # fails the check, so bad data can't merge.
+      - name: dbt build
+        run: dbt build --profiles-dir .

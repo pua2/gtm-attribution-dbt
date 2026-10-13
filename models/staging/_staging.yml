@@ -1,0 +1,75 @@
+version: 2
+
+models:
+  - name: stg_accounts
+    description: "One cleaned row per customer account."
+    columns:
+      - name: account_id
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_campaigns
+    description: "One row per marketing campaign, with cost converted to dollars."
+    columns:
+      - name: campaign_id
+        description: "Primary key."
+        tests:
+          - unique
+          - not_null
+      - name: actual_cost
+        description: "Campaign spend in dollars."
+
+  - name: stg_campaign_members
+    description: "People (leads/contacts) engaged by a campaign — the funnel layer."
+    columns:
+      - name: campaign_member_id
+        tests:
+          - unique
+          - not_null
+      - name: campaign_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_campaigns')
+              field: campaign_id
+
+  - name: stg_opportunities
+    description: "One row per sales opportunity, with a normalized stage and dollar amount."
+    columns:
+      - name: opportunity_id
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_accounts')
+              field: account_id
+      - name: stage
+        description: "Canonical stage label."
+        tests:
+          - accepted_values:
+              values: ['Closed Won', 'Closed Lost', 'Early Stage', 'Late Stage', 'Unknown']
+
+  - name: stg_campaign_influence
+    description: "Many-to-many bridge crediting campaigns for opportunities (Salesforce Campaign Influence)."
+    columns:
+      - name: influence_id
+        tests:
+          - unique
+          - not_null
+      - name: campaign_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_campaigns')
+              field: campaign_id
+      - name: opportunity_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_opportunities')
+              field: opportunity_id

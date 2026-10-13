@@ -1,0 +1,16 @@
+campaign_member_id,campaign_id,contact_name,member_status,responded,created_date
+CM001,CMP001,Alice Reyes,Attended,true,2025-03-01
+CM002,CMP001,Ben Carter,Registered,false,2025-02-25
+CM003,CMP001,Carla Diaz,Attended,true,2025-03-01
+CM004,CMP002,Dan Okoro,Attended,true,2025-01-15
+CM005,CMP002,Ester Kim,Registered,false,2025-01-20
+CM006,CMP002,Frank Li,Attended,true,2025-02-10
+CM007,CMP003,Grace Nolan,Downloaded,true,2025-02-05
+CM008,CMP003,Henry Sato,Downloaded,true,2025-03-12
+CM009,CMP004,Ivy Chen,Clicked,true,2025-01-08
+CM010,CMP004,Jack Moore,Clicked,true,2025-02-14
+CM011,CMP004,Karen Frost,Impression,false,2025-03-02
+CM012,CMP005,Leo Park,Referred,true,2025-06-18
+CM013,CMP006,Mia Grant,Contacted,false,2025-04-05
+CM014,CMP006,Noah Webb,Contacted,false,2025-04-06
+CM015,CMP006,Olivia Ruiz,Bounced,false,2025-04-07

@@ -1,0 +1,7 @@
+campaign_id,campaign_name,campaign_type,actual_cost_cents,start_date,end_date,is_active
+CMP001,2025 Security Summit,Event,5000000,2025-03-01,2025-03-03,false
+CMP002,Q1 Webinar Series,Webinar,1200000,2025-01-10,2025-03-31,false
+CMP003,Zero Trust Whitepaper,Content,800000,2025-02-01,2025-06-30,true
+CMP004,Google Search - Brand,Paid Search,2500000,2025-01-01,2025-12-31,true
+CMP005,Partner Referral Program,Referral,300000,2025-01-01,2025-12-31,true
+CMP006,Cold Outbound - SDR,Outbound,1500000,2025-04-01,2025-12-31,true

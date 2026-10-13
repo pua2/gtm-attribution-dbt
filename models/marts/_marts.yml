@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: fct_campaign_performance
+    description: >
+      One row per campaign answering "did this campaign generate money?" —
+      cost, funnel engagement, weighted-attribution won revenue, open pipeline,
+      net return, and ROI. Revenue is credited by influence weight so it is
+      never double-counted across campaigns.
+    columns:
+      - name: campaign_id
+        tests:
+          - unique
+          - not_null
+      - name: attributed_won_revenue
+        description: "Won revenue credited to this campaign by influence weight."
+      - name: roi
+        description: "(attributed_won_revenue - actual_cost) / actual_cost."
+
+  - name: fct_opportunities
+    description: "Incremental opportunity fact, loaded by created_at watermark."
+    columns:
+      - name: opportunity_id
+        tests:
+          - unique
+          - not_null

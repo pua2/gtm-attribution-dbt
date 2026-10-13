@@ -1,0 +1,11 @@
+opportunity_id,account_id,opportunity_name,stage,amount_cents,is_closed,is_won,primary_campaign_id,close_date,created_date
+OPP001,ACC001,Northwind - Falcon Complete,Closed Won,10000000,true,true,CMP001,2025-05-20,2025-03-05 09:00:00
+OPP002,ACC002,Globex - Cloud Security,closed-won,25000000,true,true,CMP001,2025-06-15,2025-03-10 10:30:00
+OPP003,ACC003,Initech - Identity Protection,Negotiation,6000000,false,false,CMP002,2025-09-30,2025-04-02 14:00:00
+OPP004,ACC004,Umbrella - Endpoint Rollout,Closed Won,18000000,true,true,CMP003,2025-07-01,2025-04-18 11:15:00
+OPP005,ACC005,Sterling - SMB Bundle,Closed Lost,2000000,true,false,CMP004,2025-06-10,2025-04-20 16:45:00
+OPP006,ACC001,Northwind - Expansion,Proposal,8000000,false,false,CMP003,2025-10-15,2025-05-01 08:30:00
+OPP007,ACC002,Globex - Threat Intel,Closed Won,12000000,true,true,CMP004,2025-08-05,2025-05-12 13:20:00
+OPP008,ACC003,Initech - Renewal,Discovery,4500000,false,false,CMP002,2025-11-01,2025-06-03 10:00:00
+OPP009,ACC004,Umbrella - Add-on Modules,Closed Won,9000000,true,true,CMP005,2025-07-22,2025-06-20 15:00:00
+OPP010,ACC005,Sterling - Upsell,Qualification,3000000,false,false,CMP004,2025-12-01,2025-07-10 09:45:00
